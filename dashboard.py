@@ -12,18 +12,20 @@ from utils.coloredlog import ColorLogger
 
 
 class Dashboard():
-    def __init__(self, screen:pygame.Surface, zone:pygame.Rect , logger:ColorLogger=None):
+    def __init__(self, screen:pygame.Surface, logger:ColorLogger=None):
         self.logger = logger
         self.screen = screen
-        self.screen_rect = zone
     
         # load Dashboard settings
         self.param_file = os.path.join(SETTINGS,"dashboard.yaml")
         self.settings = ParameterFile(self.param_file, logger).parameters
         if self.logger:
-            self.logger.info(f"Player settings: {self.settings}")
+            self.logger.info(f"Dashboard settings: {self.settings}")
         self._init_var_from_settings()
         
+        # Determine Rectangle for Dashboard at TOP of screen
+        self.screen_rect = pygame.Rect(0, 0, screen.get_width(), self.zone_height)
+
         #Set font
         self.font = pygame.font.Font(self.font_path, size=self.font_size)
 
@@ -33,6 +35,7 @@ class Dashboard():
     def _init_var_from_settings(self):
         """ Initialize instance variables from setting file content """
         try:
+            self.zone_height:str = self.settings["Height"]
             self.font_path:str = self.settings["Font"]["Path"]
             self.font_size:int = self.settings["Font"]["Size"]
             self.font_color:tuple = self.settings["Font"]["Color"]
@@ -80,6 +83,7 @@ class Dashboard():
         warp_rect.topright = (self.screen_rect.right - text_margin, 35)
 
         #Blit the HUD
+        pygame.draw.rect(self.screen, self.background_color, self.screen_rect, 0)
         self.screen.blit(catch_text, catch_rect)
         self.screen.blit(score_text, score_rect)
         self.screen.blit(round_text, round_rect)
@@ -122,5 +126,5 @@ class Dashboard():
 
 if __name__ == "__main__":
     pygame.init()
-    dashboard = Dashboard(screen=pygame.display.set_mode((1200, 600)), zone=pygame.Rect(0, 0, 1200, 100))
+    dashboard = Dashboard(screen=pygame.display.set_mode((1200, 600)))
                       
