@@ -1,0 +1,20 @@
+Title: Monster Wrangler
+# Icon: null
+Icon: assets/images/game/monster_icon.png
+FPS: 60
+Screen:
+  Size: [1200, 700]
+  DashboardHeight: 100
+  SafeZoneHeight: 120
+Font: 
+  Path: assets/fonts/Pixel.ttf
+  Size: 24
+  Color: [255, 255, 0]     # YELLOW
+Background:
+  Color: [0, 0, 0]         # BLACK
+  Image: null
+Music:
+  Play: null
+  Pause: null
+Sound:
+  NextLevel: assets/sounds/next_level.wav

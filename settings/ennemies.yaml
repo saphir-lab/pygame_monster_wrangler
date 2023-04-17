@@ -1,0 +1,40 @@
+- Name: BLUE
+  Sprite: False
+  Image: 
+    Path: assets/images/ennemies/blue_monster.png
+    Size: [32, 32]
+    Color: [20, 176, 235]
+  Sound: 
+    Collision: assets/sounds/monster01.wav
+- Name: GREEN
+  Sprite: False
+  Image: 
+    Path: assets/images/ennemies/green_monster.png
+    Size: [64, 64]
+    Color: [87, 201, 47]
+  Sound: 
+    Collision: assets/sounds/monster02.wav
+- Name: PURPLE
+  Sprite: False
+  Image: 
+    Path: assets/images/ennemies/purple_monster.png
+    Size: [96, 96]
+    Color: [226, 73, 243]
+  Sound: 
+    Collision: assets/sounds/catch.wav
+- Name: ORANGE
+  Sprite: False
+  Image: 
+    Path: assets/images/ennemies/yellow_monster.png
+    Size: [112, 112]
+    Color: [243, 157, 20]
+  Sound: 
+    Collision: assets/sounds/catch.wav
+- Name: BLUE_HIGH
+  Sprite: False
+  Image: 
+    Path: assets/images/ennemies/blue_monster.png
+    Size: [128, 128]
+    Color: [20, 176, 235]
+  Sound: 
+    Collision: assets/sounds/monster01.wav

@@ -1,0 +1,10 @@
+Lives: 3
+Warps: 2
+Velocity: 8
+Sprite: False
+Image: 
+  Path: assets/images/player/knight.png
+  Size: [64, 64]
+Sound:
+  die: "assets/sounds/die.wav"
+  warp: assets/sounds/warp.wav
