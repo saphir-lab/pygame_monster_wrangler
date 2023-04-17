@@ -22,17 +22,18 @@ from utils.coloredlog import ColorLogger
 # - DONE: Restructure the yaml file in game
 # - DONE: Check catch is OK using Name instead of colot
 # - DONE: Add more try/except when loading all setting files
-# - DONE: Dediced class to draw safezone
+# - DONE: Dedicated class to draw safezone
+# - DONE: Add a page when end of the round with time, bonus, etc
+# - DONE Keep screen with animation in case of Game Over
 # - How to validate format of fields in YAMLL file --> use schema library
 # - Add more logging for debugging purpose
 # - Add a first page before starting (other then the pause one use currently)
-# - DONE: Add a page when end of the round with time, bonus, etc
 # - Add possibility to safe name & display TOP 10 scores
 # - Load image or animated sprites using parameters
 # - New element like bonus (coins, increase warp, increase live)
 # - New element like damage (speed-up monsters, new monsters, reduce play zone, reduce monster size)
 # - Add a game option with 
-#       - limited time to carch all monsters
+#       - limited time to catch all monsters
 #       - extra bonus/malus
 
 
@@ -179,6 +180,8 @@ class Game():
                 #Check for game over
                 if self.player.lives <= 0:
                     self.game_over()
+                else:
+                    self.pause_game("You caught the wrong monster", "continue", with_animation=True)
 
     def choose_new_target(self):
         """Choose a new target monster for the player"""
