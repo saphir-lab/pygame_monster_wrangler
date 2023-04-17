@@ -183,7 +183,8 @@ class Game():
                 if self.player.lives <= 0:
                     self.game_over()
                 else:
-                    self.pause_game("You caught the wrong monster", "continue", with_animation=True)
+                    if self.player.pause_when_die:
+                        self.pause_game("You caught the wrong monster", "continue", with_animation=True)
 
     def choose_new_target(self):
         """Choose a new target monster for the player"""

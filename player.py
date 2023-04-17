@@ -41,6 +41,7 @@ class Player(pygame.sprite.Sprite):
             self.starting_warps:int = self.settings["Warps"]
             self.velocity:int = self.settings["Velocity"]
             self.sprite:bool = self.settings["Sprite"]
+            self.pause_when_die:bool = self.settings["PauseWhenDie"]
             self.image_path:str = self.settings["Image"]["Path"]
             self.size:tuple = self.settings["Image"]["Size"]
             self.sound_path_die:str = self.settings["Sound"]["die"]

@@ -2,6 +2,7 @@ Lives: 3
 Warps: 2
 Velocity: 8
 Sprite: False
+PauseWhenDie: False
 Image: 
   Path: assets/images/player/knight.png
   Size: [64, 64]
