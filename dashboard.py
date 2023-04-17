@@ -7,6 +7,7 @@ import pygame
 
 # Personal Python Modules
 from const import *
+from ennemies import Monster
 from utils.parameterfile import ParameterFile
 from utils.coloredlog import ColorLogger
 
@@ -31,6 +32,7 @@ class Dashboard():
 
         # Dashboard elements
         self.reset_score()
+        self.target_monster:Monster = None
 
     def _init_var_from_settings(self):
         """ Initialize instance variables from setting file content """
@@ -52,8 +54,9 @@ class Dashboard():
     def add_score(self):
         self.score += 100*self.round_number
 
-    def draw(self, lives:int, warps:int, target_monster_image:pygame.Surface):
+    def draw(self, lives:int, warps:int, target_monster:Monster):
         """Draw the HUD and other to the display"""
+        self.target_monster = target_monster
         text_margin = 10
 
         #Set text
@@ -92,10 +95,11 @@ class Dashboard():
         self.screen.blit(warp_text, warp_rect)
         
         # Blit the target monster & draw rectangle in associated color
-        target_monster_rect = target_monster_image.get_rect()
-        target_monster_rect.centerx = self.screen_rect.centerx
-        target_monster_rect.bottom = self.screen_rect.bottom - 3
-        self.screen.blit(target_monster_image, target_monster_rect)
+        if self.target_monster:
+            target_monster_rect = self.target_monster.image.get_rect()
+            target_monster_rect.centerx = self.screen_rect.centerx
+            target_monster_rect.bottom = self.screen_rect.bottom - 3
+            self.screen.blit(self.target_monster.image, target_monster_rect)
         # pygame.draw.rect(self.screen, self.target_monster.color, target_monster_rect, 2)
 
     def get_bonus(self):

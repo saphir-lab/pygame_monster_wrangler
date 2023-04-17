@@ -90,7 +90,8 @@ class Game():
 
             # Initialize Monsters
             self.ennemies_lst = Ennemies(logger=self.logger).ennemies_lst
-
+            self.target_monster:Monster = None
+            
     def _init_var_from_settings(self):
         try:
             self.title = self.settings["Title"]
@@ -134,8 +135,9 @@ class Game():
         self.monster_group.draw(self.screen)
 
         #draw Dashboard & Color the play zone with the color of the target monster
-        self.dashboard.draw(lives=self.player.lives, warps=self.player.warps, target_monster_image=self.target_monster_hud_image)
-        pygame.draw.rect(self.screen, self.target_monster.color, self.playzone, 4)
+        self.dashboard.draw(lives=self.player.lives, warps=self.player.warps, target_monster=self.target_monster)
+        if self.target_monster and self.target_monster.color:
+            pygame.draw.rect(self.screen, self.target_monster.color, self.playzone, 4)
 
         # Display pause text
         if msg1:
@@ -186,10 +188,10 @@ class Game():
     def choose_new_target(self):
         """Choose a new target monster for the player"""
         self.target_monster = random.choice(self.monster_group.sprites())
-        self.target_monster_hud_image = self.target_monster.image                           
 
     def game_over(self):
         self.player.reset_position()
+        self.target_monster = None
         self.pause_game(f"Game Over", enter_to_text="play again", with_animation=True)
         self.reset_game()
 

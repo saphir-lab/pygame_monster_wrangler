@@ -1,6 +1,6 @@
-Height: 120
+Height: 110
 Font: 
-  Path: assets/fonts/Pixel.ttf
+  Path: assets/fonts/Abrushow.ttf
   Size: 24
   Color: [255, 255, 0]     # YELLOW
 Background:

@@ -8,7 +8,7 @@ Font:
   Size: 24
   Color: [255, 0, 0]     # RED
 Background:
-  Color: [238,229,212]         # BLACK
+  Color: [238,229,212]   # BLACK
   Image: null
 Music:
   Play: null
