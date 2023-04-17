@@ -17,25 +17,17 @@ from utils.parameterfile import ParameterFile
 from utils.coloredlog import ColorLogger
 
 # TODO
-# - DONE: Warp only when not on safe zone
-# - DONE: test monsters with other size
-# - DONE: Restructure the yaml file in game
-# - DONE: Check catch is OK using Name instead of colot
-# - DONE: Add more try/except when loading all setting files
-# - DONE: Dedicated class to draw safezone
-# - DONE: Add a page when end of the round with time, bonus, etc
-# - DONE Keep screen with animation in case of Game Over
+# - Load of background images
+# - Load image or animated sprites using parameters
 # - How to validate format of fields in YAMLL file --> use schema library
 # - Add more logging for debugging purpose
 # - Add a first page before starting (other then the pause one use currently)
 # - Add possibility to safe name & display TOP 10 scores
-# - Load image or animated sprites using parameters
 # - New element like bonus (coins, increase warp, increase live)
 # - New element like damage (speed-up monsters, new monsters, reduce play zone, reduce monster size)
 # - Add a game option with 
 #       - limited time to catch all monsters
 #       - extra bonus/malus
-
 
 class Game():
     """A class to control gameplay"""
