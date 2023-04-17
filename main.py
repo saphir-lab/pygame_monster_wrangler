@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = 'P. Saint-Amand'
 __appname__ = 'Monsters'
-__version__ = 'V 0.0.1'
+__version__ = 'V 1.0.0'
 
 # Standard Python Modules
 import logging
