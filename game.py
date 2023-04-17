@@ -121,30 +121,30 @@ class Game():
         self.screen.fill(self.background_color)
         self.safezone.draw()
         
-        #Update and draw sprite groups
-        if self.is_paused:
-        # Display pause text
-            if msg1:
-                msg1_rect = msg1.get_rect()
-                msg1_rect.center = self.screen_rect.center
-                self.screen.blit(msg1, msg1_rect)
-            if msg2:
-                msg2_rect = msg2.get_rect()
-                msg2_rect.center = (self.screen_rect.centerx, self.screen_rect.centery + (self.font_size * 2))
-                self.screen.blit(msg2, msg2_rect)
-        else:
         # Update elements when not paused
+        if not self.is_paused:
             self.dashboard.update_timestamp(FPS=self.FPS)
             self.player_group.update()
             self.monster_group.update()
             self.check_collisions()
 
+        # draw sprite groups
         self.player_group.draw(self.screen)
         self.monster_group.draw(self.screen)
 
         #draw Dashboard & Color the play zone with the color of the target monster
         self.dashboard.draw(lives=self.player.lives, warps=self.player.warps, target_monster_image=self.target_monster_hud_image)
         pygame.draw.rect(self.screen, self.target_monster.color, self.playzone, 4)
+
+        # Display pause text
+        if msg1:
+            msg1_rect = msg1.get_rect()
+            msg1_rect.center = self.screen_rect.center
+            self.screen.blit(msg1, msg1_rect)
+        if msg2:
+            msg2_rect = msg2.get_rect()
+            msg2_rect.center = (self.screen_rect.centerx, self.screen_rect.centery + (self.font_size * 2))
+            self.screen.blit(msg2, msg2_rect)
 
         #Update display and tick clock
         pygame.display.update()
