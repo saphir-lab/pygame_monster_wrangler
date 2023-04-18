@@ -4,5 +4,5 @@ Font:
   Size: 24
   Color: [255, 255, 0]     # YELLOW
 Background:
-  Color: [171,219,227]        # BLACK
+  Color: [25, 35, 35]      # DARK
   Image: null

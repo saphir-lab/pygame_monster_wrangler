@@ -2,7 +2,7 @@ Height: 110
 Font: 
   Path: assets/fonts/Abrushow.ttf
   Size: 24
-  Color: [255, 255, 0]     # YELLOW
+  Color: [255, 255, 0]    # Yellow
 Background:
-  Color: [171,219,227]     # Light Blue
+  Color: [59, 73, 74]     # Dark
   Image: null

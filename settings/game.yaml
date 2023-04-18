@@ -8,8 +8,8 @@ Font:
   Size: 24
   Color: [255, 0, 0]     # RED
 Background:
-  Color: [238,229,212]   # BLACK
-  Image: null
+  Color: [255, 255, 255]   # BLACK
+  Image: assets/images/background/graveyard.png
 Music:
   Play: null
   Pause: null
