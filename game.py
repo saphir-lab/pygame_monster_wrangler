@@ -17,7 +17,7 @@ from utils.parameterfile import ParameterFile
 from utils.coloredlog import ColorLogger
 
 # TODO
-# - Load of background images
+# - DONE: Load of background images
 # - Load image or animated sprites using parameters
 # - How to validate format of fields in YAMLL file --> use schema library
 # - Add more logging for debugging purpose
@@ -128,7 +128,8 @@ class Game():
 
     def update(self, msg1: pygame.Surface = None, msg2: pygame.Surface = None):
         # Fill the display
-        self.screen.fill(self.background_color)
+        if self.background_color:
+            self.screen.fill(self.background_color)
 
         # Blit the background
         if self.background_image_path:
